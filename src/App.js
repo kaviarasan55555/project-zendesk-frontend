@@ -14,9 +14,9 @@ function App() {
   const handleFormSubmit = async (formData) => {
     try {
       // the backend with react information
-      await axios.post('http://localhost:5000/api/queries', { ...formData, userId: user._id });
+      await axios.post('https://jjj-iuxx.onrender.com/api/queries', { ...formData, userId: user._id });
       // Fetch updated queries after submission
-      const response = await axios.get('http://localhost:5000/api/queries');
+      const response = await axios.get('https://jjj-iuxx.onrender.com/api/queries');
       setQueries(response.data);
       // success message
       setSuccessMessage('Ticket was created successfully!');
@@ -30,7 +30,7 @@ function App() {
   const handleLogin = async (credentials) => {
     try {
       // login request to the backend
-      const response = await axios.post('http://localhost:5000/api/login', credentials);
+      const response = await axios.post('https://jjj-iuxx.onrender.com/api/login', credentials);
       setUser(response.data.user);
     } catch (error) {
       console.error('Login failed:', error);
@@ -40,7 +40,7 @@ function App() {
   const handleRegister = async (userData) => {
     try {
       // register request to the backend
-      const response = await axios.post('http://localhost:5000/api/register', userData);
+      const response = await axios.post('https://jjj-iuxx.onrender.com/api/register', userData);
       setUser(response.data.user);
     } catch (error) {
       console.error('Registration failed:', error);
